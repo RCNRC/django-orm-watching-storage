@@ -3,10 +3,7 @@ from django.utils.timezone import localtime
 
 
 def get_duration(visit):
-    if visit.leaved_at is not None:
-        return visit.leaved_at - visit.entered_at
-    else:
-        return localtime() - localtime(visit.entered_at)
+    return localtime(visit.leaved_at) - localtime(visit.entered_at)
 
 
 def format_duration(duration):
