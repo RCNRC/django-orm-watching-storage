@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 def passcard_info_view(request, passcode):
     passcard = get_object_or_404(Passcard, passcode=passcode)
     this_passcard_visits = []
-    visits = Visit.objects.filter(passcard__owner_name=passcard.owner_name)
+    visits = Visit.objects.filter(passcard=passcard)
     for visit in visits:
         this_passcard_visits.append({
             "entered_at": f"{visit.entered_at}",
