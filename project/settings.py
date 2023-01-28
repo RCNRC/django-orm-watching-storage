@@ -1,20 +1,22 @@
 import os
-from dotenv import dotenv_values
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DATABASES = {
     'default': {
-        'ENGINE': dotenv_values(".env")["DATABASES_DEFAULT_ENGINE"],
-        'HOST': dotenv_values(".env")["DATABASES_DEFAULT_HOST"],
-        'PORT': dotenv_values(".env")["DATABASES_DEFAULT_PORT"],
-        'NAME': dotenv_values(".env")["DATABASES_DEFAULT_NAME"],
-        'USER': dotenv_values(".env")["DATABASES_DEFAULT_USER"],
-        'PASSWORD': dotenv_values(".env")["DATABASES_DEFAULT_PASSWORD"],
+        'ENGINE': os.environ["DATABASES_DEFAULT_ENGINE"],
+        'HOST': os.environ["DATABASES_DEFAULT_HOST"],
+        'PORT': os.environ["DATABASES_DEFAULT_PORT"],
+        'NAME': os.environ["DATABASES_DEFAULT_NAME"],
+        'USER': os.environ["DATABASES_DEFAULT_USER"],
+        'PASSWORD': os.environ["DATABASES_DEFAULT_PASSWORD"],
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = dotenv_values(".env")["SECRET_KEY"]
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 DEBUG = True
 
