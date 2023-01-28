@@ -5,12 +5,12 @@ load_dotenv()
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ["DATABASES_DEFAULT_ENGINE"],
-        'HOST': os.environ["DATABASES_DEFAULT_HOST"],
-        'PORT': os.environ["DATABASES_DEFAULT_PORT"],
-        'NAME': os.environ["DATABASES_DEFAULT_NAME"],
-        'USER': os.environ["DATABASES_DEFAULT_USER"],
-        'PASSWORD': os.environ["DATABASES_DEFAULT_PASSWORD"],
+        'ENGINE': os.environ["DATABASE_DEFAULT_ENGINE"],
+        'HOST': os.environ["DATABASE_DEFAULT_HOST"],
+        'PORT': os.environ["DATABASE_DEFAULT_PORT"],
+        'NAME': os.environ["DATABASE_DEFAULT_NAME"],
+        'USER': os.environ["DATABASE_DEFAULT_USER"],
+        'PASSWORD': os.environ["DATABASE_DEFAULT_PASSWORD"],
     }
 }
 
