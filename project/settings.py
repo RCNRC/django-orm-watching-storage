@@ -12,33 +12,33 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS = [dotenv_values(".env")["INSTALLED_APPS"]]
+INSTALLED_APPS = ['datacenter']
 
 SECRET_KEY = dotenv_values(".env")["SECRET_KEY"]
 
-DEBUG = dotenv_values(".env")["DEBUG"]=='True'
+DEBUG = True
 
-ROOT_URLCONF = dotenv_values(".env")["ROOT_URLCONF"]
+ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = [dotenv_values(".env")["ALLOWED_HOSTS"]]
+ALLOWED_HOSTS = ['*']
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
     {
-        'BACKEND': dotenv_values(".env")["TEMPLATES_BACKEND"],
-        'DIRS': [os.path.join(BASE_DIR, dotenv_values(".env")["TEMPLATES_DIRS"])],
-        'APP_DIRS': dotenv_values(".env")["TEMPLATES_APP_DIRS"]=='True',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
     },
 ]
 
 
-USE_L10N = dotenv_values(".env")["USE_L10N"]=='True'
+USE_L10N = True
 
-LANGUAGE_CODE = dotenv_values(".env")["LANGUAGE_CODE"]
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = dotenv_values(".env")["TIME_ZONE"]
+TIME_ZONE = 'Europe/Moscow'
 
-USE_TZ = dotenv_values(".env")["USE_TZ"]=='True'
+USE_TZ = True
 
-DEFAULT_AUTO_FIELD = dotenv_values(".env")["DEFAULT_AUTO_FIELD"]
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
