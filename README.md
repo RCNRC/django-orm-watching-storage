@@ -20,4 +20,17 @@ py -m pip download --destination-directory DIR -r requirements.txt
 
 ## Использование
 
-Запустить файл manage.py как Python скрипт.
+Программа использует переменную окружения DJANGO_SETTINGS_MODULE, где указано местоположение файла с настройками для django проекта (если не установлено значение переменной, то по умолчанию ставится `project.settings`).  
+Запустить файл manage.py как Python скрипт с 1 аргументом - подкоммандой django.  
+Пример запуска сервера на локальном адресе: `http://0.0.0.0:8000/`:
+```comandline
+> python manage.py runserver 0.0.0.0:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 28, 2023 - 12:46:33
+Django version 3.2.16, using settings 'project.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+```
