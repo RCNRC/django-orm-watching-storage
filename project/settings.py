@@ -22,7 +22,7 @@ DEBUG = os.environ["DEBUG"].lower() == "true"
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [os.environ["ALLOWED_HOSTS"]]
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
