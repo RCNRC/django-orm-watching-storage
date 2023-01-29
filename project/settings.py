@@ -16,13 +16,13 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = os.environ["SECRET_KEY"] if os.environ["SECRET_KEY"] else ''
 
-DEBUG = os.environ["DEBUG"].lower() == "true"
+DEBUG = os.environ["DEBUG"].lower() == "true" if os.environ["DEBUG"] else False
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = [os.environ["ALLOWED_HOSTS"]]
+ALLOWED_HOSTS = [os.environ["ALLOWED_HOSTS"]] if os.environ["ALLOWED_HOSTS"] else []
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
